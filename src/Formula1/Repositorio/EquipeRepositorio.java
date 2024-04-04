@@ -1,35 +1,29 @@
-package Formula1;
+package Formula1.Repositorio;
+
+import Formula1.Entidade.Piloto;
+import Formula1.Inteface.IEquipeRepositorio;
+import Formula1.Entidade.Equipe;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class EquipeArrayList {
+public class EquipeRepositorio implements IEquipeRepositorio {
     ArrayList <Equipe> EquipeList = new ArrayList<>();
 
-
-
     Scanner inputDaEquipe = new Scanner(System.in);
-    public void salvandoEquipeNaLista(Equipe novaEquipe){
+    public void salvandoEquipeNaLista(String nomeEquipe, Piloto Piloto1, Piloto Piloto2){
+        Equipe novaEquipe = new Equipe(nomeEquipe, Piloto1, Piloto2);
         System.out.println("Salvando nova equipe");
-        EquipeList.add(novaEquipe);
+        EquipeList.addLast(novaEquipe);
         System.out.println("Equipe adicionada com sucesso!");
-
     }
     public void removendoEquipeDaLista() {
-        System.out.println("Digite o nome da equipe que vai excluir");
-        String equipeExcluida = inputDaEquipe.nextLine();
-        for (Equipe localizador : EquipeList) {
-            if (localizador.getNomeEquipe().equalsIgnoreCase(equipeExcluida)) {
-                EquipeList.remove(localizador);
-                System.out.println("removeu equipe");
-
-                break;
-            }
-
-
+        if(EquipeList.isEmpty()) {
+            System.out.println("A fila esta vazia");
+        }else {
+            System.out.println("removeu a equipe: "+EquipeList.get(0).getNomeEquipe());
+            EquipeList.removeFirst();
         }
-
-
     }
 
     public void mostrandoTodasEquipes(){
@@ -42,18 +36,17 @@ public class EquipeArrayList {
             System.out.println("1° Piloto - "+ EquipeList.get(index).getPiloto1().getNome());
             System.out.println(" Nacionalidade - "+ EquipeList.get(index).getPiloto1().getNacionalidade());
             System.out.println(" Experiencia- "+ EquipeList.get(index).getPiloto1().getExperiencia());
-            System.out.println(" Modelo - "+ EquipeList.get(index).getPiloto1().getModelo());
-            System.out.println(" Velocidade - "+ EquipeList.get(index).getPiloto1().getVelocidadeMaxima());
-            System.out.println(" Peso - "+ EquipeList.get(index).getPiloto1().getPeso());
+            System.out.println(" Modelo - "+ EquipeList.get(index).getPiloto1().getVeiculo().getModelo());
+            System.out.println(" Velocidade - "+ EquipeList.get(index).getPiloto1().getVeiculo().getVelocidadeMaxima());
+            System.out.println(" Peso - "+ EquipeList.get(index).getPiloto1().getVeiculo().getPeso());
             System.out.println("|||||PILOTO 2|||||");
             System.out.println("2° Piloto - "+ EquipeList.get(index).getPiloto2().getNome());
             System.out.println(" Nacionalidade - "+ EquipeList.get(index).getPiloto2().getNacionalidade());
             System.out.println(" Experiencia- "+ EquipeList.get(index).getPiloto2().getExperiencia());
-            System.out.println(" Modelo - "+ EquipeList.get(index).getPiloto2().getModelo());
-            System.out.println(" Velocidade - "+ EquipeList.get(index).getPiloto2().getVelocidadeMaxima());
-            System.out.println(" Peso - "+ EquipeList.get(index).getPiloto2().getPeso());
+            System.out.println(" Modelo - "+ EquipeList.get(index).getPiloto2().getVeiculo().getModelo());
+            System.out.println(" Velocidade - "+ EquipeList.get(index).getPiloto2().getVeiculo().getVelocidadeMaxima());
+            System.out.println(" Peso - "+ EquipeList.get(index).getPiloto2().getVeiculo().getPeso());
             i = i+1;
         }
-
     }
 }

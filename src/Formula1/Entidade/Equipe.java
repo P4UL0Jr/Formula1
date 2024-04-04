@@ -1,4 +1,4 @@
-package Formula1;
+package Formula1.Entidade;
 
 import java.util.Scanner;
 
@@ -13,22 +13,7 @@ public class Equipe {
         this.piloto2 = piloto2;
     }
 
-    public Equipe() {
-
-    }
-
-    static Equipe salvandoEquipe(Piloto piloto1, Piloto piloto2){
-        Scanner inputEquipe = new Scanner(System.in);
-        System.out.println("Digite o nome da equipe");
-        String nomeEquipe = inputEquipe.nextLine();
-        Equipe EquipeNova = new Equipe(nomeEquipe, piloto1,piloto2);
-        return  EquipeNova;
-    }
-    public void exibirInformacoesEquipe(){
-        System.out.println("Nome da equipe: "+this.getNomeEquipe());
-        System.out.println("Piloto 1: "+ this.getPiloto1());
-        System.out.println("Piloto 2: "+ this.getPiloto2());
-    }
+    public Equipe() {}
 
     public String getNomeEquipe() {
         return nomeEquipe;

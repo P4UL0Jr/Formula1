@@ -1,4 +1,4 @@
-package Formula1;
+package Formula1.Entidade;
 
 public abstract class VeiculoF1 {
     private String modelo;
@@ -14,11 +14,7 @@ public abstract class VeiculoF1 {
     protected VeiculoF1() {
     }
 
-    public  void exibirEspecificacoes(){
-        System.out.println("Modelo do carro: "+getModelo());
-        System.out.println("Velocidade maxima atinginda pelo carro: "+getVelocidadeMaxima());
-        System.out.println("Peso do carro: "+getPeso());
-    }
+
     public String getModelo(){
         return this.modelo;
     }

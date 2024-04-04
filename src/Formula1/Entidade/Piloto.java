@@ -1,23 +1,27 @@
-package Formula1;
+package Formula1.Entidade;
 
 import java.util.Scanner;
 
-public class Piloto extends VeiculoF1{
+public class Piloto {
     private String nome;
     private String nacionalidade;
-    private int experiencia;
+    private String experiencia;
+    private Veiculo veiculo;
+    private Piloto proximoPiloto;
 
 
 
-    public Piloto(String nome, String nacionalidade, int experiencia, String modelo, double velocidadeMaxima, double peso) {
+    public Piloto(String nome, String nacionalidade, String experiencia, Veiculo veiculo, Piloto piloto) {
 
-
-        this.setModelo(modelo);
-        this.setVelocidadeMaxima(velocidadeMaxima);
-        this.setPeso(peso);
         this.setNome(nome);
         this.setNacionalidade(nacionalidade);
         this.setExperiencia(experiencia);
+        this.setVeiculo(veiculo);
+        this.setProximoPiloto(piloto);
+    }
+
+    public Piloto(String nomePiloto2, String nacionalidadePiloto2, String anoDeExperienciaPiloto2, String modeloCarroPiloto2, String velocidadeMaximaPiloto2, String pesoPiloto2) {
+
     }
 
     public Piloto() {
@@ -32,13 +36,13 @@ public class Piloto extends VeiculoF1{
         System.out.println("Digite a nacionalidade do PILOTO 1");
         String nacionalidadePiloto1 = inputDoPiloto.nextLine();
         System.out.println("Digite o(os) anos de experiencia do PILOTO 1");
-        int anoDeExperienciaPiloto1 = inputDoPilotoNumber.nextInt();
+        String anoDeExperienciaPiloto1 = inputDoPilotoNumber.nextLine();
         System.out.println("Digite o modelo do carro do PILOTO 1");
         String modeloCarroPiloto1 = inputDoPiloto.nextLine();
         System.out.println("Digite a velocidade maxima do carro do PILOTO 1");
-        double velocidadeMaximaPiloto1 = inputDoPilotoNumber.nextDouble();
+        String velocidadeMaximaPiloto1 = inputDoPilotoNumber.nextLine();
         System.out.println("Digite o peso do carro do PILOTO 1");
-        double pesoPiloto1 = inputDoPilotoNumber.nextDouble();
+        String pesoPiloto1 = inputDoPilotoNumber.nextLine();
         Piloto p1 = new Piloto(nomePiloto1,nacionalidadePiloto1,anoDeExperienciaPiloto1,modeloCarroPiloto1,velocidadeMaximaPiloto1,pesoPiloto1);
         return p1;
     }
@@ -50,27 +54,17 @@ public class Piloto extends VeiculoF1{
         System.out.println("Digite a nacionalidade do PILOTO 2");
         String nacionalidadePiloto2 = inputDoPiloto.nextLine();
         System.out.println("Digite o(os) anos de experiencia do PILOTO 2");
-        int anoDeExperienciaPiloto2 = inputDoPilotoNumber.nextInt();
+        String anoDeExperienciaPiloto2 = inputDoPilotoNumber.nextLine();
         System.out.println("Digite o modelo do carro do PILOTO 2");
         String modeloCarroPiloto2 = inputDoPiloto.nextLine();
         System.out.println("Digite a velocidade maxima do carro do PILOTO 2");
-        double velocidadeMaximaPiloto2 = inputDoPilotoNumber.nextDouble();
+        String velocidadeMaximaPiloto2 = inputDoPilotoNumber.nextLine();
         System.out.println("Digite o peso do carro do PILOTO 2");
-        double pesoPiloto2 = inputDoPilotoNumber.nextDouble();
+        String pesoPiloto2 = inputDoPilotoNumber.nextLine();
         Piloto p2 = new Piloto(nomePiloto2,nacionalidadePiloto2,anoDeExperienciaPiloto2,modeloCarroPiloto2,velocidadeMaximaPiloto2,pesoPiloto2);
         return p2;
     }
 
-    @Override
-    public void exibirEspecificacoes() {
-
-        System.out.println("Velocidade Maxima: "+getVelocidadeMaxima());
-        System.out.println("Peso: "+getPeso());
-        System.out.println("Modelo: "+getModelo());
-        System.out.println(getNome());
-        System.out.println(getNacionalidade());
-        System.out.println(getExperiencia());
-    }
 
     public String getNome(){
         return nome;
@@ -87,11 +81,27 @@ public class Piloto extends VeiculoF1{
         this.nacionalidade = nacionalidade;
     }
 
-    public int getExperiencia() {
+    public String getExperiencia() {
         return experiencia;
     }
 
-    public void setExperiencia(int experiencia) {
+    public void setExperiencia(String experiencia) {
         this.experiencia = experiencia;
+    }
+
+    public Veiculo getVeiculo() {
+        return veiculo;
+    }
+
+    public void setVeiculo(Veiculo veiculo) {
+        this.veiculo = veiculo;
+    }
+
+    public Piloto getProximoPiloto() {
+        return proximoPiloto;
+    }
+
+    public void setProximoPiloto(Piloto proximoPiloto) {
+        this.proximoPiloto = proximoPiloto;
     }
 }
