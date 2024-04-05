@@ -1,20 +1,20 @@
 package Formula1.Servico;
 
+import java.util.Scanner;
+
+import Formula1.Entidade.Equipe;
 import Formula1.Entidade.Piloto;
+import Formula1.Entidade.VeiculoF1;
+import Formula1.Inteface.IPilotoServico;
 import Formula1.Repositorio.PilotoRepositorio;
 
-public class PilotoServico {
+public class PilotoServico implements IPilotoServico{
 
-    public static Piloto adicionandoPiloto(String nome, String nacionalidade, String experiencia, String veiculo){
-        Piloto novoPiloto = new Piloto();
-        novoPiloto.setNome(nome);
-        novoPiloto.setNacionalidade(nacionalidade);
-        novoPiloto.setExperiencia(experiencia);
-        novoPiloto.setVeiculo(veiculo);
-        novoPiloto.setProximoPiloto(PilotoRepositorio.primeiro);
-        PilotoRepositorio.primeiro=novoPiloto;
-        return PilotoRepositorio.primeiro;
-
-
+    static Piloto salvandoPiloto(Piloto piloto){
+        
+        PilotoRepositorio.pilotoList.addLast(piloto);
+        return  piloto;
+        
     }
+    
 }

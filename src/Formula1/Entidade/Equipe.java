@@ -6,6 +6,7 @@ public class Equipe {
     private String nomeEquipe;
     private Piloto piloto1;
     private Piloto piloto2;
+    private Equipe proximaEquipe;
 
     public Equipe(String nomeEquipe, Piloto piloto1, Piloto piloto2) {
         this.nomeEquipe = nomeEquipe;
@@ -38,4 +39,13 @@ public class Equipe {
     public void setPiloto2(Piloto piloto2) {
         this.piloto2 = piloto2;
     }
+
+    public Equipe getProximaEquipe() {
+        return proximaEquipe;
+    }
+
+    public void setProximaEquipe(Equipe proximaEquipe) {
+        this.proximaEquipe = proximaEquipe;
+    }
+    
 }
