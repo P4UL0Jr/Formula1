@@ -9,20 +9,15 @@ import Formula1.Entidade.VeiculoF1;
 public class PilotoRepositorio {
     public static ArrayList<Piloto> pilotoList = new ArrayList<>();
 
-    static Piloto salvandoPiloto(Piloto piloto){
-        Piloto novoPiloto = new Piloto(nome, nacionalidade, veiculo );
-        System.out.println("Novo piloto adicionado");
-        pilotoList.addLast(novoPiloto);
-        System.out.println("Equipe adicionada com sucesso!");
-    }
-    public void removendoEquipeDaLista() {
+    public static Piloto removendoEquipeDaLista() {
         if(pilotoList.isEmpty()) {
             System.out.println("A fila esta vazia");
         }else {
-            System.out.println("removeu a equipe: "+pilotoList.get(0).getNomeEquipe());
-            pilotoList.removeFirst();
+            System.out.println("removeu o piloto: "+pilotoList.get(0).getNome());
+            return pilotoList.removeFirst();
             
         }
+        return null;
     }
     public void mostrandoTodosPilotos(){
         System.out.println("Mostrando pilotos!");

@@ -1,11 +1,9 @@
 package Formula1.Repositorio;
 
 import Formula1.Entidade.Piloto;
+import Formula1.Entidade.VeiculoF1;
 import Formula1.Inteface.IEquipeRepositorio;
 import Formula1.Entidade.Equipe;
-
-import java.util.ArrayList;
-import java.util.Scanner;
 
 public class EquipeRepositorio implements IEquipeRepositorio {
     public static Equipe equipePrimeira;
@@ -17,6 +15,14 @@ public class EquipeRepositorio implements IEquipeRepositorio {
         for(Equipe n = equipePrimeira; n != null; n = n.getProximaEquipe()){
            System.out.println("| nome: "+n.getNomeEquipe()+" | Piloto 1: "+n.getPiloto1().getNome()+ " | Piloto 2: "+ n.getPiloto2().getNome());
         }
+    }
+    public static Equipe removerElemento(Equipe equipe, String nomeEquipe, Piloto nomePiloto, VeiculoF1 veiculo){
+        if (equipe.getNomeEquipe().equalsIgnoreCase(nomeEquipe) || equipe.getPiloto1().getNome().equalsIgnoreCase(nomePiloto.getNome()) || equipe.getPiloto1().getVeiculo().equals(veiculo)){
+            equipe = equipe.getProximaEquipe();
+        }else {
+            equipe.setProximaEquipe(removerElemento(equipe.getProximaEquipe(), nomeEquipe, nomePiloto, veiculo));
+        }
+        return equipe;
     }
     
     public static Equipe getEquipePrimeira() {

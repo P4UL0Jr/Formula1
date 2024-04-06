@@ -4,7 +4,7 @@ public class VeiculoF1 {
     private String modelo;
     private double velocidadeMaxima;
 
-    public VeiculoF1(String modelo, double velocidademaxima, double peso) {
+    public VeiculoF1(String modelo, double velocidademaxima) {
         this.setModelo(modelo);
         this.setVelocidadeMaxima(velocidademaxima);
     }

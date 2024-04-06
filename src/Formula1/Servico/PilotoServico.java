@@ -10,9 +10,10 @@ import Formula1.Repositorio.PilotoRepositorio;
 
 public class PilotoServico implements IPilotoServico{
 
-    static Piloto salvandoPiloto(Piloto piloto){
+    public static Piloto salvandoPiloto(Piloto piloto){
         
         PilotoRepositorio.pilotoList.addLast(piloto);
+        System.out.println("Piloto "+piloto.getNome()+" cadastrado");
         return  piloto;
         
     }
