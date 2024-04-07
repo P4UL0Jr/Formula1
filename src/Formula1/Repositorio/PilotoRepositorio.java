@@ -9,15 +9,13 @@ import Formula1.Entidade.VeiculoF1;
 public class PilotoRepositorio {
     public static ArrayList<Piloto> pilotoList = new ArrayList<>();
 
-    public static Piloto removendoEquipeDaLista() {
+    public static void PrimeiroPiloto() {
         if(pilotoList.isEmpty()) {
             System.out.println("A fila esta vazia");
         }else {
-            System.out.println("removeu o piloto: "+pilotoList.get(0).getNome());
-            return pilotoList.removeFirst();
+            System.out.println("Primeiro piloto: "+pilotoList.get(0).getNome()+" nacionalidade "+ pilotoList.get(0).getNacionalidade());
             
         }
-        return null;
     }
     public void mostrandoTodosPilotos(){
         System.out.println("Mostrando pilotos!");

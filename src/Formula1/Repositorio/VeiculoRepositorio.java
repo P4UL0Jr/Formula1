@@ -7,23 +7,15 @@ public class VeiculoRepositorio implements IVeiculoRepositorio {
     public static ArrayList<VeiculoF1> listaVeiculo = new ArrayList<VeiculoF1>();
 
 
-    public void listarVeiculos(){
-        System.out.println("Lista de veiculos: \n");
-        for (VeiculoF1 veiculo : listaVeiculo) {
-            System.out.println("| Velocidade max: " + veiculo.getVelocidadeMaxima() +" | Modelo: "+veiculo.getModelo()+" |");
-        }
-    }
-
-
-    public static VeiculoF1 removerVeiculo(){
+    public static void ultVeiculo(){
         if (listaVeiculo.isEmpty()) {
-            System.out.println("lista vazia");
+            System.out.println("A pilha está vazia");
         }else{
-            System.out.println("Veiculo removido - "+listaVeiculo.getLast().getModelo());
-            return listaVeiculo.removeLast();
-         }
-        return null;
+            System.out.println("Modelo: "+ listaVeiculo.getLast().getModelo()+" | Vel maxima: "+ listaVeiculo.getLast().getVelocidadeMaxima());  
+        }
+		
     }
+
 
 
     public void buscarVeiculo() {

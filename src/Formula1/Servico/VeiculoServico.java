@@ -7,7 +7,7 @@ import Formula1.Repositorio.VeiculoRepositorio;
 public class VeiculoServico implements IVeiculoServico{
   
   public static void adicionarVeiculo(VeiculoF1 veiculo) {
-    System.out.println("Veiculo adicionado" + veiculo.getModelo());
+    System.out.println("Veiculo " + veiculo.getModelo()+" adicionado com sucesso");
     VeiculoRepositorio.listaVeiculo.addLast(veiculo);
   }
   
